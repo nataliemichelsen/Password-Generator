@@ -23,15 +23,37 @@ let lower = confirm("Do you want any lowercase characters in your password?")
 let upper = confirm("Do you want any uppercase characters in your password?")
 let special = confirm("Do you want any special characters in your password?")
 let number = confirm("Do you want any numbers in your password?")
-let passwordlength = document.getElementById("slider").value;
+let passwordlength = prompt('How long do you want your password to be?')
+// let passwordlength = document.getElementById("slider").value;
+console.log(passwordlength)
 
 function generatePassword() {
-  let finalpassword = "";
- for (let i = 0; i < passwordlength; i++) {
-   password = password + lower.charAt(Math.floor(Math.random() * Math.floor(lower.length - 1)))
- }
-
-  return finalpassword;
+  let finalPassword = "";
+  let finalPasswordArray = []
+  var allcharacters =""
+  if (lower) {
+    allcharacters += lowerChars
+  }
+  if (upper) {
+    allcharacters += upperChars
+  }
+  if (special) {
+    allcharacters += specialChars
+  }
+  if (number) {
+    allcharacters += numberChars
+  }
+  var arrayAllCharacters = allcharacters.split(',')
+  var randomIndex = Math.floor(Math.random() * arrayAllCharacters.length)
+  passwordlength = passwordlength * 1
+  for (let i = 0; i < passwordlength; i++) {
+    var randomIndex = Math.floor(Math.random() * arrayAllCharacters.length)
+    var randomCharacter = arrayAllCharacters[randomIndex]
+    finalPasswordArray.push(randomCharacter)
+  }
+  console.log(finalPasswordArray)
+    
+  return finalPassword;
 }
 
 // Assignment Code
