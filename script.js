@@ -6,12 +6,16 @@
  * complete javascript
  * capture & save preferences
  * create character arrays (Uc lc spc num)
- * TODO:
  * four if statements - does the user want ? if yes then give me that & add it to final psswrd
  * repeat for up-sp-num
  * password + = random character 
  * final password length matches length user asked for
  * length captured is a typed number typeof password length (make sure you get a number)
+ * TODO:
+ * connect password generate button with readonly box
+ * fix copy to clipboard function
+ * fix slider feature
+ * fix previous passwords area
  */
 
 const lowerChars = "abcdefghijklmnopqrstuvwxyz".split("");
@@ -83,7 +87,7 @@ function copyPassword(){
 document.getElementById("lastNums").innerHTML += password + "br />";
 // not working
 
-// Setting the default password length to "14"
+// Setting the default password length to "14" on the slider (does not affect the default option - just for show)
 document.getElementById('length').innerHTML = "Length: 14";
 // works!
 
@@ -98,7 +102,7 @@ document.getElementById("slider").oninput = function(){
   }
 
 }
-// works! 
+// works in theory - doesn't set length yet
 
 
 
