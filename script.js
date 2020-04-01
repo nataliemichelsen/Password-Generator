@@ -23,18 +23,17 @@ const upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 const specialChars = "!#$%&()*+,-./:;<=>?@[]^_`{|}~".split("");
 const numberChars = "0123456789".split("");
 
-let lower = confirm("Do you want any lowercase characters in your password?")
-let upper = confirm("Do you want any uppercase characters in your password?")
-let special = confirm("Do you want any special characters in your password?")
-let number = confirm("Do you want any numbers in your password?")
-let passwordlength = prompt('How long do you want your password to be?')
 // let passwordlength = document.getElementById("slider").value;
-console.log(passwordlength)
 
 function generatePassword() {
   let finalPassword = "";
   let finalPasswordArray = []
-  var allcharacters =""
+  let lower = confirm("Do you want any lowercase characters in your password?")
+  let upper = confirm("Do you want any uppercase characters in your password?")
+  let special = confirm("Do you want any special characters in your password?")
+  let number = confirm("Do you want any numbers in your password?")
+  let passwordlength = prompt('How long do you want your password to be?')
+  var allcharacters = ""
   if (lower) {
     allcharacters += lowerChars
   }
@@ -55,28 +54,22 @@ function generatePassword() {
     var randomCharacter = arrayAllCharacters[randomIndex]
     finalPasswordArray.push(randomCharacter)
   }
-  console.log(finalPasswordArray)
-    
+  for (let i = 0; i < finalPasswordArray.length; i++) {
+    finalPassword += finalPasswordArray[i]
+  }
+  console.log(finalPassword)
+  var passwordText = document.querySelector("#password");
+  passwordText.value = finalPassword;
+
   return finalPassword;
 }
 
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-} 
-
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+var generateBtn = document.querySelector("#generate");
+generateBtn.addEventListener("click", generatePassword);
 
 // Found out how to add this with my Google skills and thought it would make a nice edition 
-function copyPassword(){
+function copyPassword() {
   document.getElementById("display").select();
   document.execCommand("Copy");
   alert("Copied.")
@@ -92,12 +85,12 @@ document.getElementById('length').innerHTML = "Length: 14";
 // works!
 
 // Found out how to add this with my Google skills and thought it would make the character length prompt more interactive
-document.getElementById("slider").oninput = function(){
+document.getElementById("slider").oninput = function () {
 
-  if(document.getElementById("slider").value > 0){
+  if (document.getElementById("slider").value > 0) {
     document.getElementById("length").innerHTML = "Length: " + document.getElementById("slider").value;
   }
-  else{
+  else {
     document.getElementById("length").innerHTML = "Length: 1";
   }
 
