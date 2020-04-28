@@ -1,4 +1,4 @@
-*,
+/* *,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -15,31 +15,62 @@ body,
 body {
   font-family: sans-serif;
   background-color: #f9fbfd;
-}
+} */
 
-.wrapper {
+/* .wrapper {
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
+} */
+
+.body {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 
-header {
+.header {
   text-align: center;
-  padding: 20px;
-  padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  padding: 4px;
+  font-size: 24px;
+  background-color: white;
+  color: darkblue;
+  border-top: 14px;
+  border-right: 0px;
+  border-left: 0px;
+  border-bottom: 14px;
+  border-color: darkblue;
+  border-style: solid;
+}
+
+.generate {
+  padding-top: 14px;
+}
+
+.prev_pass {
+  text-align: center;
+  padding: 14px;
+  padding-bottom: 44px;
+  font-size: 24px;
+  background-color: white;
+  color: darkblue;
+  border-top: 14px;
+  border-right: 0px;
+  border-left: 0px;
+  border-bottom: 14px;
+  border-color: darkblue;
+  border-style: solid;
 }
 
 .card {
-  background-color: hsl(0, 0%, 100%);
-  border-radius: 5px;
-  border-width: 1px;
+  background-color: darkblue;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-  color: hsl(206, 17%, 28%);
-  font-size: 18px;
+  color: white;
+  font-size: 24px;
   margin: 0 auto;
   max-width: 800px;
-  padding: 30px 40px;
+  padding: 4px;
+  text-align: center;
 }
 
 .card-header::after {
@@ -51,13 +82,15 @@ header {
 }
 
 .card-body {
-  min-height: 100px;
+  width: 90%;
+  margin-left: 24px;
 }
 
 .content {
   text-align: center;
+  font-size: 24px;
 }
-
+/* 
 #slider {
   width: 70%;
 }
@@ -65,9 +98,9 @@ header {
 #length {
   display: inline-block;
   width: 70%;
-}
+} */
 
-.card-footer::before {
+/* .card-footer::before {
   content: " ";
   display: block;
   width: 100%;
@@ -79,28 +112,23 @@ header {
   content: " ";
   display: block;
   clear: both;
-}
+} */
 
 .btn {
   border: none;
   background-color: hsl(360, 91%, 36%);
-  border-radius: 25px;
+  border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
   color: hsl(0, 0%, 100%);
   display: inline-block;
   font-size: 22px;
   line-height: 22px;
-  margin: 16px 16px 16px 20px;
+  margin: 16px 16px 16px 16px;
   padding: 14px 34px;
   text-align: center;
   cursor: pointer;
   align-items: center;
-}
-
-.prev_pass {
-  margin-bottom: 5%;
-  text-align: center;
 }
 
 button[disabled] {
@@ -119,18 +147,18 @@ button[disabled] {
   border: none;
   display: block;
   width: 100%;
-  padding-top: 15px;
+  /* padding-top: 15px;
   padding-left: 15px;
   padding-right: 15px;
-  padding-bottom: 85px;
+  padding-bottom: 85px; */
   font-size: 1.2rem;
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
   border: 2px dashed #c0c7cf;
   border-radius: 6px;
   resize: none;
   overflow: hidden;
+  font-style: italic;
+  padding-top: 14px;
 }
 
 @media (max-width: 690px) {
