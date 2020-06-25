@@ -1,30 +1,10 @@
-/**
- * DONE:
- * page loads
- * user is prompted password length & characters (Uc lc spc num)
- * click generate password
- * complete javascript
- * capture & save preferences
- * create character arrays (Uc lc spc num)
- * four if statements - does the user want ? if yes then give me that & add it to final psswrd
- * repeat for up-sp-num
- * password + = random character 
- * final password length matches length user asked for
- * length captured is a typed number typeof password length (make sure you get a number)
- * TODO:
- * connect password generate button with readonly box
- * fix copy to clipboard function
- * fix slider feature
- * fix previous passwords area
- */
-
+// consts
 const lowerChars = "abcdefghijklmnopqrstuvwxyz".split("");
 const upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 const specialChars = "!#$%&()*+,-./:;<=>?@[]^_`{|}~".split("");
 const numberChars = "0123456789".split("");
 
-// let passwordlength = document.getElementById("slider").value;
-
+// generate password
 function generatePassword() {
   let finalPassword = "";
   let finalPasswordArray = []
@@ -68,23 +48,23 @@ function generatePassword() {
 var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", generatePassword);
 
-// Found out how to add this with my Google skills and thought it would make a nice edition 
-function copyPassword() {
-  document.getElementById("display").select();
-  document.execCommand("Copy");
-  alert("Copied.")
+// copy to clipboard
+function copy() {
+  var copyText = document.querySelector("#password");
+  copyText.select();
+  document.execCommand("copy");
 }
-// not sure if it is working yet
 
-// Found out how to add this with my Google skills - This makes the "Previous Passwords" appear below
+document.querySelector("#copy").addEventListener("click", copy);
+
+// previous passwords list
 document.getElementById("lastNums").innerHTML += password + "br />";
-// not working
 
 // Setting the default password length to "14" on the slider (does not affect the default option - just for show)
 document.getElementById('length').innerHTML = "Length: 14";
 // works!
 
-// Found out how to add this with my Google skills and thought it would make the character length prompt more interactive
+// slider function for password length
 document.getElementById("slider").oninput = function () {
 
   if (document.getElementById("slider").value > 0) {
@@ -93,9 +73,7 @@ document.getElementById("slider").oninput = function () {
   else {
     document.getElementById("length").innerHTML = "Length: 1";
   }
-
 }
-// works in theory - doesn't set length yet
 
 
 
